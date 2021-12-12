@@ -3,7 +3,7 @@ $pdo = new \PDO("mysql:host=localhost; dbname=task16", "root", "");
 
 $sql = "SELECT * FROM images";
 $statement = $pdo->prepare($sql);
-$statement->execute(['email' => $email]);
+$statement->execute();
 $images = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ $images = $statement->fetchAll(PDO::FETCH_ASSOC);
                             <div class="panel-content">
                                 <div class="panel-content">
                                     <div class="form-group">
-                                        <form action="task_16_handler.php" enctype="multipart/form-data" method="POST">
+                                        <form action="task_17_handler.php" enctype="multipart/form-data" method="POST">
                                             <div class="form-group">
                                                 <label class="form-label" for="simpleinput">Image</label>
                                             <input name="image" type="file" id="simpleinput" class="form-control">

@@ -15,7 +15,7 @@ if (isset($_GET['delete'])) {
     $sql = "DELETE FROM images WHERE id = :id";
     $statement = $pdo->prepare($sql);
     $statement->execute(['id' => $id]);
-    
+
     header('location: task_17.php'); exit();
 }
 
