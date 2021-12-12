@@ -19,10 +19,10 @@ if (isset($_GET['delete'])) {
     header('location: task_17.php'); exit();
 }
 
-$tmp = explode('.', $_FILES['image']['name']);
-$ext = end($tmp);
+$file = pathinfo($_FILES['image']['name']);
+$ext = $file['extension'];
 
-$image = 'uploads/' . uniqid() . ".$ext[1]";
+$image = 'uploads/' . uniqid() . ".$ext";
 
 $pdo = new \PDO("mysql:host=localhost; dbname=task16", "root", "");
 $sql = "INSERT INTO images (image) VALUES (:image)";

@@ -1,7 +1,7 @@
 <?php
 
-$tmp = explode('.', $_FILES['image']['name']);
-$ext = end($tmp);
+$file = pathinfo($_FILES['image']['name']);
+$ext = $file['extension'];
 
 $image = 'uploads/' . uniqid() . ".$ext";
 
