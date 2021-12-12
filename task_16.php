@@ -3,8 +3,9 @@ $pdo = new \PDO("mysql:host=localhost; dbname=task16", "root", "");
 
 $sql = "SELECT * FROM images";
 $statement = $pdo->prepare($sql);
-$statement->execute(['email' => $email]);
+$statement->execute();
 $images = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

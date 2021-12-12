@@ -3,7 +3,7 @@
 $tmp = explode('.', $_FILES['image']['name']);
 $ext = end($tmp);
 
-$image = 'uploads/' . uniqid() . ".$ext[1]";
+$image = 'uploads/' . uniqid() . ".$ext";
 
 $pdo = new \PDO("mysql:host=localhost; dbname=task16", "root", "");
 $sql = "INSERT INTO images (image) VALUES (:image)";
