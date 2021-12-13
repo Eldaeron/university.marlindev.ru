@@ -23,7 +23,6 @@ if (isset($_GET['delete'])) {
 for ($i = 0; $i < count($_FILES['images']); $i++) {
 
     $file = $_FILES['images']['name'][$i];
-    $image = 'uploads/' . uniqid() . ".$ext";
 
     $file_info = pathinfo($file);
     $ext = $file_info['extension'];
