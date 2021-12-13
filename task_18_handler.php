@@ -19,6 +19,7 @@ if (isset($_GET['delete'])) {
     header('location: task_18.php'); exit();
 }
 
+
 for ($i = 0; $i < count($_FILES['images']); $i++) {
 
     $file = $_FILES['images']['name'][$i];
@@ -26,7 +27,7 @@ for ($i = 0; $i < count($_FILES['images']); $i++) {
 
     $file_info = pathinfo($file);
     $ext = $file_info['extension'];
-    
+
     $image = 'uploads/' . uniqid() . ".$ext";
 
     $pdo = new \PDO("mysql:host=localhost; dbname=task16", "root", "");
